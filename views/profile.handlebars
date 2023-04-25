@@ -1,0 +1,16 @@
+<div class="container-fluid bg-danger d-flex justify-content-center align-items-center" style="min-height: 110vh">
+    <div class="col-10 bg-dark opacity-75 text-white p-5">
+        {{#if session.user}}
+            <h1 class="text-center mb-3">Bienvenido {{session.user.first_name}}!</h1>
+            <h5>Nombre y apellido: {{session.user.last_name}}, {{session.user.first_name}}</h5>
+            <h5>Rol: {{session.user.rol}}</h5>
+            <h5>E-Mail: {{session.user.email}}</h5>
+            <h5>Edad: {{session.user.age}}</h5>
+            <h5>ID: {{session.user.cart}}</h5>
+        {{/if}}
+        <h4 class="text-danger">{{message}}</h4>
+        <div class="d-flex justify-content-center">
+            <a href="/api/sessions/logout" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+</div>

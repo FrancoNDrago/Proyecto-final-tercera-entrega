@@ -1,0 +1,26 @@
+<div class="container-fluid bg-danger d-flex justify-content-center align-items-center" style="min-height: 110vh">
+    <div class="col-10 bg-dark opacity-75 p-3 text-white">
+        <div class="row">
+            <div class="col-4">
+                <img src="{{product.thumbnails}}" class="w-100" alt="{{product.title}}">
+            </div>
+            <div class="col-8 d-flex flex-column justify-content-between">
+                <h1 class="text-center">{{product.title}}</h1>
+                <div>
+                    <p>{{product.description}}</p>
+                    <p>Precio: ${{product.price}}</p>
+                    <p>Stock: {{product.stock}}</p>
+                </div>
+                {{#if session.user}}
+                    <div class="d-flex justify-content-center align-items-center">
+                        <a href="#" id="addToCart" class="btn btn-danger">Add to cart</a>
+                        <input type="hidden" id="cart_id" value="{{session.user.cart}}">
+                        <input type="hidden" id="product_id" value="{{product._id}}">
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/productDetail.js"></script>
